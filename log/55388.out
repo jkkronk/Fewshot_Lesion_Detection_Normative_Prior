@@ -1,0 +1,39 @@
+Using device: cuda:0
+Loading data...
+Train data loaded
+Valid data loaded
+Start training:
+Epoch: 0
+epoch 0: train_l2_loss 117.311012 train_lat_loss 22.246477 total train_loss 139.557489
+epoch 0: test_l2_loss 108.458747 test_lat_loss 10.282351 total loss 118.741098
+Epoch: 1
+Traceback (most recent call last):
+  File "run_train_vae.py", line 67, in <module>
+    loss, lat_loss, l2_loss = train_vae(vae_model, train_data_loader, device, optimizer, epoch)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 218, in train_vae
+    recon_batch, mu, logvar = model(data.double())
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 187, in forward
+    return self.decode(z), mu, logvar
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 172, in decode
+    z = self.decoder(z)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 87, in forward
+    out += F.leaky_relu(self.shortcut(x), 0.2)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/batchnorm.py", line 83, in forward
+    exponential_average_factor, self.eps)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/functional.py", line 1697, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 11.93 GiB total capacity; 11.32 GiB already allocated; 116.25 MiB free; 39.41 MiB cached)

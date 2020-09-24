@@ -1,0 +1,18 @@
+Using device: cuda:0
+Loading data...
+Train data loaded
+Valid data loaded
+Start training:
+Epoch: 0
+epoch 0: train_l2_loss 86.531777 train_lat_loss 139.834252 total train_loss 226.366029
+epoch 0: test_l2_loss 93.944394 test_lat_loss 25.079717 total loss 119.024111
+Epoch: 1
+epoch 1: train_l2_loss 73.192013 train_lat_loss 14.806610 total train_loss 87.998624
+epoch 1: test_l2_loss 88.789949 test_lat_loss 15.759475 total loss 104.549424
+Epoch: 2
+epoch 2: train_l2_loss 69.256784 train_lat_loss 13.518537 total train_loss 82.775321
+epoch 2: test_l2_loss 75.399996 test_lat_loss 12.992387 total loss 88.392383
+Epoch: 3
+epoch 3: train_l2_loss 65.926998 train_lat_loss 13.350159 total train_loss 79.277157
+epoch 3: test_l2_loss 83.254144 test_lat_loss 13.822763 total loss 97.076907
+Epoch: 4

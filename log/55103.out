@@ -1,0 +1,32 @@
+Using device: cuda:0
+Loading data...
+Train data loaded
+Valid data loaded
+Start training:
+Epoch: 0
+epoch 0: train_l2_loss 117.869421 train_lat_loss 28.986086 total train_loss 146.855506
+epoch 0: test_l2_loss 118.131409 test_lat_loss 12.011469 total loss 130.142877
+Traceback (most recent call last):
+  File "run_train_vae.py", line 95, in <module>
+    lat_batch_sample = vae_model.sample(batch_size, device)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 193, in sample
+    return self.decode(sample)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 172, in decode
+    z = self.decoder(z)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/code/Fewshot_Lesion_Detection_Normative_Prior/model/ConvVAE.py", line 85, in forward
+    out = F.leaky_relu(self.bn1(self.conv1(x)), 0.2)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/scratch_net/bmicdl03/jonatank/conda_envs/pytorch9/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 338, in forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size 1024 1024 3 3, expected input[32, 512, 4, 4] to have 1024 channels, but got 512 channels instead
